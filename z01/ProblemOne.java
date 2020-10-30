@@ -8,7 +8,11 @@ public class ProblemOne {
         System.out.println(step_one_one(n));
         System.out.println(step_one_two(n));
         System.out.println(step_two(n));
-        System.out.println(step_three(n));
+        int[] a = step_three(n);
+        System.out.println("[" + a[0] + ", " +a[1] + ", " +a[2] + ", " +a[3] + "]");
+        System.out.println(step_four(n));
+        System.out.println(0x7FFFFFFF);
+        System.out.println(0x80000000);
     }
 
 
@@ -35,5 +39,9 @@ public class ProblemOne {
         int d = (input & 0x000000FF);
         int[] result = new int[]{a, b, c, d};
         return result;
+    }
+    public static int step_four(int input)
+    {
+        return (input & 0x00FFFF00) >>> 8;
     }
 }
